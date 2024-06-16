@@ -19,6 +19,19 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+            
+    App\Controller\LoginController:
+            public: true
+            arguments:
+                $entityManager: '@doctrine.orm.entity_manager'
+                
+    App\Controller\RegisterController:
+        public: true
+        autowire: true
+        autoconfigure: true
 
+    App\Controller\ConvocatoriaController:
+        public: true
+        tags: ['controller.service_arguments']
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

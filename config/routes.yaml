@@ -3,3 +3,11 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+items_baremables_images:
+    path: /itemsBaremables/{filename}
+    controller: App\Controller\SolicitudController::serveImage
+
+items_task_images:
+    path: /itemsTareas/{filename}
+    controller: App\Controller\TareaController::serveImageTask
